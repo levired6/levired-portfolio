@@ -34,27 +34,199 @@
     </section>
 
     <section id="process" class="reveal">
-      <h2>Process</h2>
-      <h3>Research</h3>
-      <p>Conducted analytics review and 8 user interviews. Found users were confused by shipping costs and multi-step layout which created friction.</p>
+      <h2>Project Overview</h2>
+      <p>The myFlix application is a robust, responsive, single-page web application designed for movie 
+enthusiasts. It provides users with a comprehensive platform to explore a collection of Oscar 
+nominated movies, access detailed information, manage their personal profiles, and curate a 
+personalized list of favorite films. This project served as a capstone to demonstrate proficiency in 
+full-stack web development, covering both front-end and back-end development, database 
+management, and user authentication. </p>
 
-      <h3>Ideation & prototyping</h3>
-      <p>Reduced micro-steps, added inline shipping cost estimator, clarified CTA labels, and ran 5 usability sessions on the prototype.</p>
+      <h3>Live Demo</h3>
+      <p><• Frontend (Client-Side): https://oscars2025.netlify.app 
+• Backend (API): https://oscars2025-f0070acec0c4.herokuapp.com (Base URL for API 
+endpoints) /p>
 
-      <h3>Solution</h3>
-      <p>Delivered a simplified single-page checkout with progressive disclosure and clearer affordances. Handoff included tokens and specs for engineering.</p>
+      <h3>The Problem</h3>
+      <p>Many movie discovery platforms offer limited personalization and often feel cluttered. Users 
+desire a streamlined, intuitive interface where they can easily find information about movies, 
+track their favorites, and manage their profile without unnecessary distractions. Additionally, 
+developers need to demonstrate proficiency in building secure, scalable applications that offer a 
+rich user experience across various devices. </p>
     </section>
 
     <section id="impact" class="reveal">
-      <h2>Impact</h2>
+      <h2>Project Goal & Objectives </h2>
+      <p>The primary goal was to build a full-stack movie application that is intuitive, responsive, and 
+secure. Key objectives included: </p>
       <ul>
-        <li>Checkout abandonment decreased by 18%</li>
-        <li>Average checkout time reduced from 2.5 min to 1.9 min</li>
-        <li>Positive qualitative feedback in follow-up tests</li>
+        <li>User Authentication: Implement secure user registration, login, and logout 
+functionalities. </li>
+        <li>Movie Catalog: Display a comprehensive list of movies with detailed information. </li>
+        <li>Personalization: Allow users to add/remove movies from a favorites list and manage 
+their personal profile. </li>
+        <li>Responsiveness: Ensure the application is fully functional and visually appealing on all 
+screen sizes (mobile, tablet, desktop). </li>
+        <li>Robust Backend: Develop a secure RESTful API to manage movie and user data. </li>
+        <li>Database Integration: Utilize a NoSQL database (MongoDB) for data storage.</li>
       </ul>
 
-      <h3>What I learned</h3>
-      <p>Small changes to information architecture and trust signals can have measurable impact; always validate assumptions with quick usability rounds.</p>
+      <h3>My Process & Approach</h3>
+      <p>My development process followed a full-stack agile approach, moving iteratively between front
+end and back-end tasks. </p>
+
+       <h2>Phase 1: Backend Development & Database Design</h2>
+       <ul>
+         <li>Database Schema: Designed Mongoose schemas for Movie and User models, including 
+relationships for favorite movies and user-specific comments. </li>
+         <li>RESTful API: Developed a Node.js and Express.js API, defining endpoints for user 
+registration, login, fetching movies, updating user profiles, and managing favorite 
+movies. </li>
+         <li>Authentication & Authorization: Implemented JWT-based authentication using 
+Passport.js for secure access to protected routes. </li>
+         <li>Input Validation: Integrated express-validator to ensure data integrity and security 
+for user inputs. </li>
+        <li>Deployment: Deployed the backend API to Heroku, ensuring continuous availability. </li>
+       </ul>
+
+         <h2>Phase 2: Frontend Development (React)</h2>
+         <ul>
+           <li>Component-Based Architecture: Built the application using React, breaking down the 
+UI into reusable components (MainView, MovieCard, MovieView, ProfileView, 
+LoginView, SignupView, NavigationBar). </li>
+           <li>State Management: Managed application state using React's useState and useEffect 
+hooks, passing user and token data via props and onUserUpdate callbacks to maintain 
+data consistency across components. </li>
+           <li>Routing: Utilized React Router DOM for seamless client-side navigation between 
+different views (Home, Movie Details, Profile, Login, Signup). .</li>
+           <li>UI Framework: Leveraged React-Bootstrap for responsive and accessible UI 
+components, minimizing custom CSS for common elements. </li>
+           <li>Styling: Applied custom SCSS for unique branding elements and enhanced user 
+experience, such as metallic button effects and the welcome graphic. </li>
+         </ul>
+
+         <h2>Phase 3: Integration & Refinement</h2>
+         <ul>
+            <li>API Integration: Connected the React frontend to the deployed backend API using 
+fetch requests, ensuring data flow and error handling.</li>
+            <li>User Experience (UX) Enhancements: 
+o Implemented a movie search/filter feature allowing users to find movies by title, 
+genre, or director. 
+<li> Added password visibility toggles in login/signup forms for improved usability.</li> 
+<li> Designed a welcome graphic with custom styling and a favicon. </li>
+<li> Enhanced image sizing for movie posters to ensure they fit correctly without 
+distortion. </li>
+<li>Responsive Design: Ensured the application's layout adapts gracefully to various screen 
+sizes, from mobile to desktop, using Bootstrap's grid system.</li>
+         </ul>
+
+         <h2>Phase 4: Testing & Deployment </h2>
+         <ul>
+            <li>Testing: While this case study focuses on the build, the project was developed with a 
+TDD mindset, laying the groundwork for comprehensive unit and integration tests (to be 
+explored in future exercises).</li>
+            <li>Deployment: Deployed the React frontend to Netlify for easy access and sharing. </li>
+            <li>Continuous Improvement: Addressed bugs and refined features based on testing and 
+observation, particularly focusing on consistent state updates after user actions (e.g., 
+adding/removing favorites). </li>
+         </ul>
+
+         <h2>Challenges & Solutions </h2>
+         <h3>Developing a full-stack application presented several challenges, each requiring thoughtful 
+solutions: </h3>
+
+            <h3>Challenge 1: Backend Error Response Consistency. </h3>
+         <ul>
+            <li>Problem: Early iterations of the backend sometimes sent plain text error 
+messages instead of consistent JSON objects, leading to "Unexpected token" 
+errors on the frontend.</li>
+            <li>Solution: Thoroughly reviewed all error handling in index.js, ensuring every 
+res.status().send() was converted to res.status().json({ message: ... 
+}) or res.json({ errors: [...] }) to guarantee JSON responses, which the 
+frontend was prepared to parse. </li> 
+<h3>Challenge 2: Inconsistent Favorite Movie Display in Profile. </h3>
+            <li>Problem: After adding or removing a favorite movie, the profile page wouldn't 
+immediately update, or all favorite movies would temporarily disappear. This 
+indicated a state synchronization issue between the MovieCard (where the action 
+occurred) and the ProfileView (where changes needed to reflect). </li>
+            <li>Solution: Refined the onUserUpdate callback mechanism to ensure the parent 
+MyFlixApplication component reliably updated its user state with the latest 
+data from the backend. Critically, the ProfileView component was refactored to 
+directly depend on the user prop (passed from MyFlixApplication) when 
+calculating and displaying favoriteMoviesDetails. This eliminated an 
+intermediate local state, making the component more reactive to external user data 
+changes. Added defensive checks for movieId and user.favoriteMovies 
+structure to handle populated Mongoose objects and potential null values 
+gracefully. </li>
+<h3>Challenge 3: Managing Image Paths for Deployment. </h3>
+<li>Problem: Images appeared correctly in development but broke after deployment 
+due to incorrect relative paths. </li>
+<li>Solution: Adjusted image paths in index.html, MovieCard.jsx, 
+MovieView.jsx, and index.scss to use absolute paths (/images/...) or relative 
+paths consistent with the build output (./images/...) for Parcel and Netlify 
+deployment, ensuring assets load correctly in production. </li>
+<h3>Challenge 4: Parcel Build Failures (Syntax Errors).</h3>
+<li>Problem: Build process failed due to subtle syntax errors (e.g., => instead of from 
+in an import statement). </li>
+<li>Solution: Identified and corrected the precise syntax error in the import 
+statement in MovieCard.jsx, ensuring the code adhered to valid JavaScript 
+syntax for Parcel's transformer. </li>
+         </ul>
+
+         <h2>Key Features Implemented </h2>
+         <ul>
+            <li>User Management: Secure signup, login, and profile updates. </li>
+            <li>Personalized Favorites: Users can add and remove movies from a unique list, complete 
+with user-specific comments. </li>
+<li>Dynamic Movie Filtering: Efficiently search movies by title, genre, or director. </li>
+<li>Responsive Design: Optimal viewing experience across all devices.</li>
+<li>Detailed Movie Information: Dedicated views for in-depth movie descriptions. </li>
+<li>RESTful API: Robust backend handling data operations and authentication. </li>
+         </ul>
+
+         <h2> Technologies Used </h2>
+         <ul>
+            <li>Frontend: React, React-Bootstrap, React Router DOM, SCSS, HTML, JavaScript 
+(ES6+), Parcel </li>
+<li>Backend: Node.js, Express.js, MongoDB (Mongoose), bcryptjs, Passport.js, express
+validator, CORS </li>
+<li>Deployment: Heroku (Backend API), Netlify (Frontend) </li>
+<li>Tools: Git, GitHub, VS Code, Postman </li>
+         </ul>
+
+         <h2>Outcome & Solution</h2>
+
+            <p>The myFlix app successfully delivers a functional, user-friendly, and secure movie application. 
+Users can seamlessly browse, search, and manage their favorite movies, enhancing their overall 
+movie discovery experience. The project effectively demonstrates proficiency in building and 
+deploying full-stack web applications, managing state, handling API interactions, and ensuring a 
+responsive design. </p>
+
+<h2> Lessons Learned & Future Improvements</h2>
+<p>This project reinforced the importance of meticulous state management in React, robust error 
+handling across both frontend and backend, and careful attention to deployment-specific pathing. 
+It highlighted how seemingly small issues (like a non-JSON error response) can cascade into 
+significant debugging challenges if not addressed systematically. </p>
+
+<h3>Future Improvements: </h3>
+
+<ul>
+    <li>Implement client-side unit and integration tests (using Jest/Enzyme or React Testing 
+Library) to align with TDD principles more deeply. </li>
+<li>Enhance accessibility (A11y) features to ensure the application is usable by individuals 
+with disabilities. </li>
+<li>Implement data visualization (charts) for movie genre popularity and event distribution 
+(as planned for Project 4.0's "Meet App"). </li>
+<li>Introduce offline capabilities using service workers to further enhance the PWA 
+experience. </li>
+<li>Add a "forgot password" flow. </li>
+<li>Allow users to edit existing comments on favorite movies without removing and re
+adding. </li>
+</ul>
+
+<h3>I invite you to explore the live application and its source code to see the full implementation of 
+these features. Your feedback is highly valued! </h3>
+         
     </section>
   </main>
 
