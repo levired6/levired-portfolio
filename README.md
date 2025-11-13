@@ -20,13 +20,6 @@ Recommended VS Code extensions
 - HTML/CSS/JS language support (built-in)
 - GitLens (optional)
 
-Editing notes
-- Replace "resume.pdf" with your actual resume file in the project root.
-
-2. On GitHub, open the repo → Settings → Pages (or "Pages" in the left sidebar).
-3. Set Source to the `main` branch and the root folder (/). Save.
-4. GitHub will provide a link like https://<your-user>.github.io/<your-repo>/ — it may take a minute.
-
 Optional: Use the gh-pages branch and an npm script (if you add a build step later).
 
 Performance & accessibility tips
