@@ -21,7 +21,7 @@
           <a href="#work">Work</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
-          <a class="cta" href="project-case-study.html">Featured case study</a>
+          <!--<a class="cta" href="project-case-study.html">Featured case study</a>-->
         </nav>
       </div>
 
@@ -34,7 +34,7 @@
           <p class="lead">I design human-centred interfaces and measurable product experiences. I work from research to
             high-fidelity prototypes and collaborate closely with engineering to ship results.</p>
           <div class="hero-ctas">
-            <a class="btn primary" href="project-case-study.html">View case study</a>
+            <!-- Removed the global "View case study" button here as requested -->
             <a class="btn" href="images/Redinger Levi ResumeV2.pdf" target="_blank" rel="noopener noreferrer"
               class="download-button">
               Download Resume (PDF)
@@ -50,60 +50,104 @@
           </div>
         </div>
       </section>
+
       <section id="work" class="projects container">
         <h2 class="section-title reveal">Selected work</h2>
+         <p class="muted">Click the thumbnail to get a live demo, or use the buttons below to view the case study or repository.</p>
         <div class="projects-grid">
+
+          <!-- Card 1 Meet App -->
           <article class="card reveal">
-            <a href="project-case-study.html" class="card-link">
-              <figure class="thumb">
-                <img
-                  src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ee89b0e8a5f3e2ad2e9db1c7c9d3d054"
-                  alt="Project thumbnail">
-              </figure>
-              <div class="card-body">
-                <h3>Checkout redesign — 18% uplift</h3>
-                <p class="muted">UX/Product design — research, prototyping, and testing.</p>
-              </div>
-            </a>
-          </article>
-          <article class="card reveal">
-            <a class="card-link" href="https://meet-gamma-one.vercel.app/" target="_blank">
-              <figure class="thumb">
-                <img src="images/Meet-app-screenshot.png" alt="Project thumbnail">
-              </figure>
+            <div class="card-content">
+              <a class="card-media" href="https://meet-gamma-one.vercel.app/" target="_blank" rel="noopener noreferrer">
+                <figure class="thumb">
+                  <img src="images/Meet-app-screenshot.png" alt="Project thumbnail">
+                </figure>
+              </a>
+
               <div class="card-body">
                 <h3>Meet App</h3>
                 <p class="muted">A serverless progressive web app (PWA) that fetches events from the Google Calendar
                   API. Developed with React, tested with Jest and deployed on Vercel.</p>
               </div>
-            </a>
+
+              <div class="card-actions">
+                <a class="btn primary" href="project-case-study-meet.html">View case study</a>
+                <a class="btn" href="https://github.com/levired6/meet.git" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </div>
           </article>
+
+          <!-- Card 2 myFlix -->
           <article class="card reveal">
-            <a class="card-link" href="https://oscars2025.netlify.app/login" target="_blank">
-              <figure class="thumb">
-                <img src="images/myflix.png" alt="Project thumbnail">
-              </figure>
+            <div class="card-content">
+              <a class="card-media" href="https://oscars2025.netlify.app/login" target="_blank" rel="noopener noreferrer">
+                <figure class="thumb">
+                  <img src="images/myflix.png" alt="Project thumbnail">
+                </figure>
+              </a>
+
               <div class="card-body">
-                <h3>MyFlix - Movie App Client-Side Programming & React Project</h3>
+                <h3>MyFlix - Movie App</h3>
                 <p class="muted">A full-stack movie web application with user authentication and profile management.
                   Built with React, Node.js, and MongoDB.</p>
               </div>
-            </a>
+
+              <div class="card-actions">
+                <a class="btn primary" href="project-case-study.html">View case study</a>
+                <a class="btn" href="https://github.com/levired6/myFlix-client.git" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </div>
           </article>
+
+          <!-- Card 3 (Pokedex) -->
           <article class="card reveal">
-            <a class="card-link" href="https://levired6.github.io/pokedex-levi/" target="_blank">
-              <figure class="thumb">
-                <img src="images/pokedex-screenshot.png" alt="Project thumbnail">
-              </figure>
+            <div class="card-content">
+              <a class="card-media" href="https://levired6.github.io/pokedex-levi/" target="_blank" rel="noopener noreferrer">
+                <figure class="thumb">
+                  <img src="images/pokedex-screenshot.png" alt="Project thumbnail">
+                </figure>
+              </a>
+
               <div class="card-body">
                 <h3>Pokedex</h3>
                 <p class="muted">A responsive web app that loads Pokemon data from an external API. Built with
                   JavaScript and Bootstrap, hosted on GitHub Pages.</p>
               </div>
-            </a>
+
+              <div class="card-actions">
+                <a class="btn primary" href="project-case-study-pokedex.html">View case study</a>
+                <a class="btn" href="https://github.com/levired6/pokedex-levi.git" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </div>
           </article>
+
+                    <!-- Card 4 -->
+          <article class="card reveal">
+            <div class="card-content">
+              <a class="card-media" href="https://levired6.github.io/checkout-demo/" target="_blank" rel="noopener noreferrer">
+                <figure class="thumb">
+                  <img
+                    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=ee89b0e8a5f3e2ad2e9db1c7c9d3d054"
+                    alt="Project thumbnail">
+                </figure>
+              </a>
+
+              <div class="card-body">
+                <h3>Checkout redesign — 18% uplift</h3>
+                <p class="muted">UX/Product design — research, prototyping, and testing.</p>
+              </div>
+
+              <div class="card-actions">
+                <a class="btn primary" href="project-case-study-checkout.html">View case study</a>
+                <a class="btn" href="https://github.com/levired6/checkout-redesign" target="_blank" rel="noopener noreferrer">View repo</a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
+
       <!--About section-->
       <section id="about" class="about container">
         <h2 class="section-title reveal">About</h2>
@@ -122,6 +166,7 @@
           </figure>
         </div>
       </section>
+
       <!--Skills & Tools section-->
       <section class="skills-tools container reveal">
         <div>
@@ -158,6 +203,7 @@
           </div>
         </div>
       </section>
+
       <section id="contact" class="contact container reveal">
         <h2 class="section-title">Contact</h2>
         <p>If you’d like to collaborate, email <a href="mailto:levi.j.redinger@gmail.com">levi.j.redinger@gmail.com</a>
