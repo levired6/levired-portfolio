@@ -1,101 +1,161 @@
-# Meet — Serverless PWA (React)
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meet Case Study</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">Levi Redinger</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="#overview">Overview</a>
+        <a href="#quick-start">Quick Start</a>
+        <a href="#scripts">Scripts</a>
+      </nav>
+    </div>
+  </header>
 
-Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local development so you don't need Google OAuth to explore the UI.
+  <main class="container case-study">
+    <section id="overview" class="reveal">
+      <h1>Meet — Serverless PWA (React)</h1>
+      <p>Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local development so you don't need Google OAuth to explore the UI.</p>
 
-## Quick overview
+      <h2>Quick Overview</h2>
+      <ul>
+        <li><strong>Frontend:</strong> Vite + React (entry: <code>index.html</code> → <code>src/main.jsx</code> → <code>src/App.jsx</code>).</li>
+        <li><strong>Mock data:</strong> <code>src/mock-data.js</code> (used automatically on <code>localhost</code>).</li>
+        <li><strong>API helpers and auth flow:</strong> <code>src/api.js</code>.</li>
+        <li><strong>Auth backend handlers (serverless):</strong> <code>auth-server/handler.js</code> (deployable to AWS Lambda/Vercel).</li>
+        <li><strong>PWA:</strong> configured using <code>vite-plugin-pwa</code> in <code>vite.config.js</code>. Service worker registration is enabled for production builds only.</li>
+      </ul>
+    </section>
 
-- Frontend: Vite + React (entry: `index.html` → `src/main.jsx` → `src/App.jsx`).
-- Mock data: `src/mock-data.js` (used automatically on `localhost`).
-- API helpers and auth flow: `src/api.js`.
-- Auth backend handlers (serverless): `auth-server/handler.js` (deployable to AWS Lambda/Vercel).
-- PWA: configured using `vite-plugin-pwa` in `vite.config.js`. Service worker registration is enabled for production builds only.
+    <hr />
 
----
+    <section id="quick-start" class="reveal">
+      <h2>Quick Start (run locally — no Google setup required)</h2>
 
-## Quick start (run locally — no Google setup required)
+      <h3>Requirements</h3>
+      <ul>
+        <li>Node.js 18+ (recommended)</li>
+        <li>npm</li>
+      </ul>
 
-Requirements
-- Node.js 18+ (recommended)
-- npm
+      <h3>Steps</h3>
+      <ol>
+        <li>Clone the repo
+          <pre><code>git clone https://github.com/levired6/meet.git
+cd meet</code></pre>
+        </li>
+        <li>Install dependencies
+          <pre><code>npm ci</code></pre>
+        </li>
+        <li>Start the dev server (Vite)
+          <pre><code>npm run dev</code></pre>
+        </li>
+        <li>Open the app
+          <pre><code>http://localhost:5173</code></pre>
+        </li>
+      </ol>
 
-Steps
-1. Clone the repo
+      <h3>Notes</h3>
+      <ul>
+        <li>When running on <code>http://localhost</code> the app uses the included mock data so you won't need Google OAuth to see the UI and features.</li>
+        <li>The service worker and PWA features are enabled in production builds only. To preview production (and test SW/PWA behavior):
+          <pre><code>npm run build
+npm run preview</code></pre>
+        </li>
+      </ul>
+    </section>
 
-   git clone https://github.com/levired6/meet.git
-   cd meet
+    <hr />
 
-2. Install dependencies
+    <section id="scripts" class="reveal">
+      <h2>Scripts</h2>
+      <ul>
+        <li><code>npm run dev</code> — start the dev server (Vite)</li>
+        <li><code>npm run build</code> — create a production build</li>
+        <li><code>npm run preview</code> — serve the production build locally (useful to test PWA/service worker)</li>
+        <li><code>npm test</code> — run tests (Jest)</li>
+        <li><code>npm run test:coverage</code> — run tests with coverage</li>
+        <li><code>npm run lint</code> — run ESLint</li>
+      </ul>
+    </section>
 
-   npm ci
+    <hr />
 
-3. Start the dev server (Vite)
+    <section class="reveal">
+      <h2>Enabling Google Calendar (optional)</h2>
 
-   npm run dev
+      <p>The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes <code>auth-server/handler.js</code> (example serverless handlers) but you must deploy or run an equivalent server locally.</p>
 
-4. Open the app
+      <h3>High Level Steps:</h3>
+      <ol>
+        <li>Create a Google OAuth Client ID (Web application) in Google Cloud Console and add your redirect URI(s).</li>
+        <li>Deploy the auth server (e.g., AWS Lambda, Vercel) or run an equivalent server that implements the endpoints used in <code>src/api.js</code>:
+          <ul>
+            <li><code>/api/get-auth-url</code> — returns an <code>authUrl</code> to redirect the user</li>
+            <li><code>/api/token/:code</code> — exchanges a code for an access token</li>
+            <li><code>/api/get-events/:access_token</code> — returns calendar events</li>
+          </ul>
+        </li>
+        <li>Set environment variables on the auth server: <code>CLIENT_ID</code>, <code>CLIENT_SECRET</code>, <code>CALENDAR_ID</code>.</li>
+        <li>Update endpoint URLs in <code>src/api.js</code> if you deploy the backend to a URL different from the one in the file.</li>
+        <li>Ensure Google redirect URIs match the deployed app URL and the auth backend configuration.</li>
+      </ol>
 
-   http://localhost:5173
+      <p>If you do not configure an auth backend, the app will fall back to cached events (if available) or the mock data on localhost.</p>
+    </section>
 
-Notes
-- When running on `http://localhost` the app uses the included mock data so you won't need Google OAuth to see the UI and features.
-- The service worker and PWA features are enabled in production builds only. To preview production (and test SW/PWA behavior):
+    <hr />
 
-  npm run build
-  npm run preview
+    <section class="reveal">
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li><strong>Blank page / no events:</strong> confirm <code>npm run dev</code> is running and you opened the port printed by Vite (default: <code>http://localhost:5173</code>).</li>
+        <li><strong>OAuth / 401 / CORS errors:</strong> those come from the auth backend or Google — check the backend CORS headers, credentials, and redirect URIs.</li>
+        <li><strong>Service worker not registering in dev:</strong> that's expected — SW registration only runs when <code>NODE_ENV === 'production'</code>. Use <code>npm run build</code> + <code>npm run preview</code> to test SW.</li>
+        <li><strong>Tests failing:</strong> ensure dev dependencies are installed (<code>npm ci</code>) and run <code>npm test</code> locally. Puppeteer-based tests may require extra CI configuration.</li>
+      </ul>
+    </section>
 
----
+    <hr />
 
-## Scripts
-- `npm run dev` — start the dev server (Vite)
-- `npm run build` — create a production build
-- `npm run preview` — serve the production build locally (useful to test PWA/service worker)
-- `npm test` — run tests (Jest)
-- `npm run test:coverage` — run tests with coverage
-- `npm run lint` — run ESLint
+    <section class="reveal">
+      <h2>Where to Look in the Code</h2>
+      <ul>
+        <li>App entry: <code>src/main.jsx</code></li>
+        <li>App component: <code>src/App.jsx</code></li>
+        <li>API helpers and auth flow: <code>src/api.js</code></li>
+        <li>Mock data: <code>src/mock-data.js</code></li>
+        <li>Service worker registration: <code>src/serviceWorkerRegistration.js</code></li>
+        <li>PWA config: <code>vite.config.js</code></li>
+        <li>Auth server example (lambda handlers): <code>auth-server/handler.js</code></li>
+      </ul>
+    </section>
 
----
+    <hr />
 
-## Enabling Google Calendar (optional)
+    <section class="reveal">
+      <h2>Contact / Contributing</h2>
+      <p>If you'd like to contribute or have questions, open an issue or a PR. For quick problems, include the command you ran and the exact error output so the issue is reproducible.</p>
 
-The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes `auth-server/handler.js` (example serverless handlers) but you must deploy or run an equivalent server locally.
+      <hr />
 
-High level steps:
-1. Create a Google OAuth Client ID (Web application) in Google Cloud Console and add your redirect URI(s).
-2. Deploy the auth server (e.g., AWS Lambda, Vercel) or run an equivalent server that implements the endpoints used in `src/api.js`:
-   - `/api/get-auth-url` — returns an `authUrl` to redirect the user
-   - `/api/token/:code` — exchanges a code for an access token
-   - `/api/get-events/:access_token` — returns calendar events
-3. Set environment variables on the auth server: `CLIENT_ID`, `CLIENT_SECRET`, `CALENDAR_ID`.
-4. Update endpoint URLs in `src/api.js` if you deploy the backend to a URL different from the one in the file.
-5. Ensure Google redirect URIs match the deployed app URL and the auth backend configuration.
+    
+    </section>
+  </main>
 
-If you do not configure an auth backend, the app will fall back to cached events (if available) or the mock data on localhost.
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="index.html">← Back to home</a></p>
+    </div>
+  </footer>
 
----
-
-## Troubleshooting
-
-- Blank page / no events: confirm `npm run dev` is running and you opened the port printed by Vite (default: `http://localhost:5173`).
-- OAuth / 401 / CORS errors: those come from the auth backend or Google — check the backend CORS headers, credentials, and redirect URIs.
-- Service worker not registering in dev: that's expected — SW registration only runs when `NODE_ENV === 'production'`. Use `npm run build` + `npm run preview` to test SW.
-- Tests failing: ensure dev dependencies are installed (`npm ci`) and run `npm test` locally. Puppeteer-based tests may require extra CI configuration.
-
----
-
-## Where to look in the code
-- App entry: `src/main.jsx`
-- App component: `src/App.jsx`
-- API helpers and auth flow: `src/api.js`
-- Mock data: `src/mock-data.js`
-- Service worker registration: `src/serviceWorkerRegistration.js`
-- PWA config: `vite.config.js`
-- Auth server example (lambda handlers): `auth-server/handler.js`
-
----
-
-## Contact / Contributing
-If you'd like to contribute or have questions, open an issue or a PR. For quick problems, include the command you ran and the exact error output so the issue is reproducible.
-
----
-
-Made with ❤️ — Levired
+  <script src="script.js" defer></script>
+</body>
+</html>
