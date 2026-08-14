@@ -1,7 +1,6 @@
 # Meet — Serverless PWA (React)
-This project is easiest to explore by running it locally. Please see the instructions below for a quick start.
 
-Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local development so anyone can run and explore it quickly.
+Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local development so you don't need Google OAuth to explore the UI.
 
 ## Quick overview
 
@@ -58,7 +57,7 @@ Notes
 
 ## Enabling Google Calendar (optional)
 
-The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes `auth-server/handler.js` (example serverless handlers) but you must deploy or run an auth server and provide Google credentials.
+The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes `auth-server/handler.js` (example serverless handlers) but you must deploy or run an equivalent server locally.
 
 High level steps:
 1. Create a Google OAuth Client ID (Web application) in Google Cloud Console and add your redirect URI(s).
@@ -99,3 +98,4 @@ If you'd like to contribute or have questions, open an issue or a PR. For quick 
 
 ---
 
+Made with ❤️ — Levired
