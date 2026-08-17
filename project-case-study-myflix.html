@@ -230,16 +230,21 @@ adding. </li>
 
 <h3>I invite you to explore the live application and its source code to see the full implementation of 
 these features. Your feedback is highly valued! </h3>
-         
+
+    <hr />
+
+    <p><a class="btn" href="index.html">Back to portfolio</a></p>
+          
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p><a href="index.html">← Back to home</a></p>
+      <p>© <span id="year"></span> Levi Redinger — Full Stack Developer. <a href="https://github.com/levired6" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
