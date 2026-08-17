@@ -136,46 +136,32 @@ adding/removing favorites). </li>
          </ul>
 
          <h2>Challenges & Solutions </h2>
-         <h3>Developing a full-stack application presented several challenges, each requiring thoughtful 
+         <h3>Developing a full-stack application presented several challenges, each requiring thoughtful
 solutions: </h3>
 
-            <h3>Challenge 1: Backend Error Response Consistency. </h3>
-         <ul>
-            <li>Problem: Early iterations of the backend sometimes sent plain text error 
-messages instead of consistent JSON objects, leading to "Unexpected token" 
-errors on the frontend.</li>
-            <li>Solution: Thoroughly reviewed all error handling in index.js, ensuring every 
-res.status().send() was converted to res.status().json({ message: ... 
-}) or res.json({ errors: [...] }) to guarantee JSON responses, which the 
-frontend was prepared to parse. </li> 
-<h3>Challenge 2: Inconsistent Favorite Movie Display in Profile. </h3>
-            <li>Problem: After adding or removing a favorite movie, the profile page wouldn't 
-immediately update, or all favorite movies would temporarily disappear. This 
-indicated a state synchronization issue between the MovieCard (where the action 
-occurred) and the ProfileView (where changes needed to reflect). </li>
-            <li>Solution: Refined the onUserUpdate callback mechanism to ensure the parent 
-MyFlixApplication component reliably updated its user state with the latest 
-data from the backend. Critically, the ProfileView component was refactored to 
-directly depend on the user prop (passed from MyFlixApplication) when 
-calculating and displaying favoriteMoviesDetails. This eliminated an 
-intermediate local state, making the component more reactive to external user data 
-changes. Added defensive checks for movieId and user.favoriteMovies 
-structure to handle populated Mongoose objects and potential null values 
-gracefully. </li>
-<h3>Challenge 3: Managing Image Paths for Deployment. </h3>
-<li>Problem: Images appeared correctly in development but broke after deployment 
-due to incorrect relative paths. </li>
-<li>Solution: Adjusted image paths in index.html, MovieCard.jsx, 
-MovieView.jsx, and index.scss to use absolute paths (/images/...) or relative 
-paths consistent with the build output (./images/...) for Parcel and Netlify 
-deployment, ensuring assets load correctly in production. </li>
-<h3>Challenge 4: Parcel Build Failures (Syntax Errors).</h3>
-<li>Problem: Build process failed due to subtle syntax errors (e.g., => instead of from 
-in an import statement). </li>
-<li>Solution: Identified and corrected the precise syntax error in the import 
-statement in MovieCard.jsx, ensuring the code adhered to valid JavaScript 
-syntax for Parcel's transformer. </li>
-         </ul>
+            <h3>Challenge 1: Backend Error Response Consistency.</h3>
+            <ul>
+              <li>Problem: Early iterations of the backend sometimes sent plain text error messages instead of consistent JSON objects, leading to "Unexpected token" errors on the frontend.</li>
+              <li>Solution: Thoroughly reviewed all error handling in index.js, ensuring every res.status().send() was converted to res.status().json({ message: ... }) or res.json({ errors: [...] }) to guarantee JSON responses, which the frontend was prepared to parse.</li>
+            </ul>
+
+            <h3>Challenge 2: Inconsistent Favorite Movie Display in Profile.</h3>
+            <ul>
+              <li>Problem: After adding or removing a favorite movie, the profile page wouldn't immediately update, or all favorite movies would temporarily disappear. This indicated a state synchronization issue between the MovieCard (where the action occurred) and the ProfileView (where changes needed to reflect).</li>
+              <li>Solution: Refined the onUserUpdate callback mechanism to ensure the parent MyFlixApplication component reliably updated its user state with the latest data from the backend. Critically, the ProfileView component was refactored to directly depend on the user prop (passed from MyFlixApplication) when calculating and displaying favoriteMoviesDetails. This eliminated an intermediate local state, making the component more reactive to external user data changes. Added defensive checks for movieId and user.favoriteMovies structure to handle populated Mongoose objects and potential null values gracefully.</li>
+            </ul>
+
+            <h3>Challenge 3: Managing Image Paths for Deployment.</h3>
+            <ul>
+              <li>Problem: Images appeared correctly in development but broke after deployment due to incorrect relative paths.</li>
+              <li>Solution: Adjusted image paths in index.html, MovieCard.jsx, MovieView.jsx, and index.scss to use absolute paths (/images/...) or relative paths consistent with the build output (./images/...) for Parcel and Netlify deployment, ensuring assets load correctly in production.</li>
+            </ul>
+
+            <h3>Challenge 4: Parcel Build Failures (Syntax Errors).</h3>
+            <ul>
+              <li>Problem: Build process failed due to subtle syntax errors (e.g., => instead of from in an import statement).</li>
+              <li>Solution: Identified and corrected the precise syntax error in the import statement in MovieCard.jsx, ensuring the code adhered to valid JavaScript syntax for Parcel's transformer.</li>
+            </ul>
 
          <h2>Key Features Implemented </h2>
          <ul>
