@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pokédex — Case study</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="/">Levi Redinger</a>
+        <nav class="nav">
+          <a href="/">Home</a>
+          <a href="#project">Project</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container" id="project">
+      <article class="case-study">
+        <h1>Pokédex</h1>
+        <p>A web application that allows users to explore and view detailed information about Pokémon using the PokéAPI.</p>
+
+        <h2>📋 Table of Contents</h2>
+        <ul>
+          <li><a href="#project-description">Project Description</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#technologies-used">Technologies Used</a></li>
+          <li><a href="#getting-started">Getting Started</a></li>
+          <li><a href="#how-to-use">How to Use</a></li>
+          <li><a href="#api">API</a></li>
+          <li><a href="#project-structure">Project Structure</a></li>
+          <li><a href="#future-enhancements">Future Enhancements</a></li>
+          <li><a href="#license">License</a></li>
+        </ul>
+
+        <h2 id="project-description">📝 Project Description</h2>
+        <p>This Pokédex is a small web application built with HTML, CSS, and JavaScript that loads Pokémon data from an external API (Application Programming Interface). The application enables users to view and explore basic and detailed Pokémon information.</p>
+
+        <p><strong>Objective:</strong> To demonstrate proficiency in:</p>
+        <ul>
+          <li>Working with external APIs</li>
+          <li>DOM manipulation with JavaScript</li>
+          <li>Building responsive user interfaces</li>
+          <li>Implementing search and filtering functionality</li>
+        </ul>
+
+        <h2 id="features">✨ Features</h2>
+        <ul>
+          <li><strong>Pokémon List</strong>: Browse through a list of 150 Pokémon</li>
+          <li><strong>Search Functionality</strong>: Use the navigation search bar to filter Pokémon by name</li>
+          <li><strong>Detailed View</strong>: Click on any Pokémon to view comprehensive details</li>
+          <li><strong>Responsive Design</strong>: Works seamlessly on desktop and mobile devices</li>
+          <li><strong>Real-time Filtering</strong>: Instantly filter results as you type</li>
+        </ul>
+
+        <h2 id="technologies-used">🛠️ Technologies Used</h2>
+        <ul>
+          <li><strong>HTML5</strong> - Structure and markup</li>
+          <li><strong>CSS3</strong> - Styling and layout</li>
+          <li><strong>JavaScript (ES6)</strong> - Interactivity and API integration</li>
+          <li><strong>PokéAPI</strong> - External data source for Pokémon information</li>
+        </ul>
+
+        <h2 id="getting-started">🚀 Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <ul>
+          <li>A modern web browser (Chrome, Firefox, Safari, Edge)</li>
+          <li>No additional installations required</li>
+        </ul>
+
+        <h3>Installation</h3>
+        <p>1. Clone the repository:</p>
+        <pre><code>git clone https://github.com/levired6/pokedex-levi.git
+cd pokedex-levi</code></pre>
+
+        <p>2. Open <code>index.html</code> in your web browser:</p>
+        <ul>
+          <li>Double-click the <code>index.html</code> file, or</li>
+          <li>Right-click and select "Open with" your preferred browser</li>
+        </ul>
+
+        <h2 id="how-to-use">📖 How to Use</h2>
+        <ol>
+          <li><strong>View Pokémon List</strong>: The application loads a list of 150 Pokémon on startup</li>
+          <li><strong>Search for Pokémon</strong>:
+            <ul>
+              <li>Type a Pokémon name in the search bar at the top of the page</li>
+              <li>Results filter automatically as you type</li>
+            </ul>
+          </li>
+          <li><strong>View Details</strong>: Click on any Pokémon name to see:
+            <ul>
+              <li>Full name and ID number</li>
+              <li>Physical characteristics</li>
+              <li>Type information</li>
+              <li>Base stats</li>
+              <li>Abilities</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h2 id="api">🌐 API</h2>
+        <p>This project uses the <strong>PokéAPI</strong> - a free Pokémon API.</p>
+        <ul>
+          <li><strong>API Endpoint</strong>: <code>https://pokeapi.co/api/v2/pokemon/?limit=150</code></li>
+          <li><strong>Documentation</strong>: <a href="https://pokeapi.co/docs/v2" target="_blank" rel="noopener noreferrer">PokéAPI Documentation</a></li>
+          <li><strong>Data Included</strong>: Names, images, types, abilities, stats, and more</li>
+        </ul>
+
+        <h2 id="project-structure">📁 Project Structure</h2>
+        <pre><code>pokedex-levi/
+├── index.html          # Main HTML structure
+├── css/
+│   └── style.css       # Styling and layout
+├── js/
+│   └── script.js       # JavaScript logic and API calls
+└── README.md           # Project documentation</code></pre>
+
+        <h2 id="future-enhancements">🎯 Future Enhancements</h2>
+        <ul>
+          <li>Add Pokémon type filtering</li>
+          <li>Implement sorting options (by name, ID, type)</li>
+          <li>Add comparison feature for multiple Pokémon</li>
+          <li>Expand to include all generations of Pokémon</li>
+          <li>Add favorites/bookmarking functionality</li>
+          <li>Implement pagination for better performance</li>
+        </ul>
+
+        <h2 id="license">📄 License</h2>
+        <p>This project is open source and available under the MIT License.</p>
+
+        <hr />
+        <p><strong>Author</strong>: Levi<br>
+        <strong>Project Created</strong>: October 2024<br>
+        <strong>Last Updated</strong>: January 2025</p>
+
+        <p><a class="btn" href="/">Back to portfolio</a></p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Levi Redinger — Full Stack Developer. <a href="https://github.com/levired6" target="_blank" rel="noopener">GitHub</a></p>
+      </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </body>
+</html>
