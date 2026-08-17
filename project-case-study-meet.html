@@ -22,7 +22,7 @@
   <main class="container case-study">
     <section id="overview" class="reveal">
       <h1>Meet — Serverless PWA (React)</h1>
-      <p>Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local development so you don't need Google OAuth to explore the UI.</p>
+      <p>Meet is a serverless Progressive Web App (PWA) built with React that displays Google Calendar events, with offline support and charts. The app is configured to use mock data in local deve[...]
 
       <h2>Quick Overview</h2>
       <ul>
@@ -91,7 +91,7 @@ npm run preview</code></pre>
     <section class="reveal">
       <h2>Enabling Google Calendar (optional)</h2>
 
-      <p>The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes <code>auth-server/handler.js</code> (example serverless handlers) but you must deploy or run an equivalent server locally.</p>
+      <p>The frontend currently expects an auth backend for exchanging codes and retrieving events. The repository includes <code>auth-server/handler.js</code> (example serverless handlers) but yo[...]
 
       <h3>High Level Steps:</h3>
       <ol>
@@ -118,8 +118,8 @@ npm run preview</code></pre>
       <ul>
         <li><strong>Blank page / no events:</strong> confirm <code>npm run dev</code> is running and you opened the port printed by Vite (default: <code>http://localhost:5173</code>).</li>
         <li><strong>OAuth / 401 / CORS errors:</strong> those come from the auth backend or Google — check the backend CORS headers, credentials, and redirect URIs.</li>
-        <li><strong>Service worker not registering in dev:</strong> that's expected — SW registration only runs when <code>NODE_ENV === 'production'</code>. Use <code>npm run build</code> + <code>npm run preview</code> to test SW.</li>
-        <li><strong>Tests failing:</strong> ensure dev dependencies are installed (<code>npm ci</code>) and run <code>npm test</code> locally. Puppeteer-based tests may require extra CI configuration.</li>
+        <li><strong>Service worker not registering in dev:</strong> that's expected — SW registration only runs when <code>NODE_ENV === 'production'</code>. Use <code>npm run build</code> + <co[...]
+        <li><strong>Tests failing:</strong> ensure dev dependencies are installed (<code>npm ci</code>) and run <code>npm test</code> locally. Puppeteer-based tests may require extra CI configura[...]
       </ul>
     </section>
 
@@ -146,16 +146,17 @@ npm run preview</code></pre>
 
       <hr />
 
-    
+      <p><a class="btn" href="index.html">Back to portfolio</a></p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p><a href="index.html">← Back to home</a></p>
+      <p>© <span id="year"></span> Levi Redinger — Full Stack Developer. <a href="https://github.com/levired6" target="_blank" rel="noopener">GitHub</a></p>
     </div>
   </footer>
 
   <script src="script.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
