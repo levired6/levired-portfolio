@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Education & Certifications</title>
+  <style>
+    :root{
+      --bg:#f8f9fb;
+      --card:#fff;
+      --muted:#6b7280;
+      --accent:#2563eb;
+      --gap:1rem;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:var(--bg);color:#111;}
+    .container{max-width:980px;margin:2rem auto;padding:1rem;}
+    header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    h1{font-size:1.25rem;margin:0}
+    p.lead{color:var(--muted);margin-top:.25rem}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--gap);margin-top:1rem}
+    .card{background:var(--card);border-radius:8px;padding:12px;box-shadow:0 1px 4px rgba(16,24,40,0.06);display:flex;gap:12px;align-items:center}
+    .thumb{width:84px;height:60px;border-radius:4px;object-fit:cover;background:#eee;flex:0 0 84px}
+    .meta{flex:1}
+    .meta h3{margin:0;font-size:1rem}
+    .meta p{margin:.25rem 0;color:var(--muted);font-size:.875rem}
+    .actions{display:flex;gap:.5rem;align-items:center;margin-top:.5rem}
+    .btn{
+      display:inline-block;padding:.45rem .7rem;border-radius:6px;text-decoration:none;font-weight:600;
+      color:#fff;background:var(--accent);border:none;cursor:pointer;font-size:.875rem;
+    }
+    .btn.secondary{background:#e6eefc;color:var(--accent);font-weight:600;border:1px solid rgba(37,99,235,0.08)}
+    footer{margin-top:2rem;text-align:center;color:var(--muted);font-size:.875rem}
+    @media (max-width:420px){.thumb{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Education & Certifications</h1>
+        <p class="lead">Click to view or download my certificates (PDF).</p>
+      </div>
+      <nav aria-label="page actions">
+        <a class="btn" href="index.html">Back</a>
+      </nav>
+    </header>
+
+    <!-- Replace the file names below with your actual PDF filenames.
+         Put the PDFs in images/certificates/ (e.g. images/certificates/certificate1.pdf) -->
+    <main>
+      <section class="grid" aria-label="Certificates list">
+
+        <!-- Certificate item (repeat for each certificate) -->
+        <article class="card">
+          <!-- Optional thumbnail: can be a small JPG/PNG preview in same folder or thumbs/ subfolder -->
+          <img class="thumb" src="images/education-certificates/thumb-frontendcert.pdf" alt="Thumbnail of Certificate 1">
+          <div class="meta">
+            <h3>Certificate Title 1</h3>
+            <p>Institution name · Date awarded</p>
+            <div class="actions">
+              <a class="btn" href="images/education-certificates/frontendcert.pdf" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="btn secondary" href="images/education-certificates/frontendcert.pdf" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="images/education_certificates/thumb-fullstackcert.pdf" alt="Thumbnail of Certificate 2">
+          <div class="meta">
+            <h3>Certificate Title 2</h3>
+            <p>Institution name · Date awarded</p>
+            <div class="actions">
+              <a class="btn" href="images/education_certificates/fullstackcert.pdf" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="btn secondary" href="images/education_certificates/fullstackcert.pdf" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="images/education_certificates/thumb-pythoncert1.pdf" alt="Thumbnail of Certificate 3">
+          <div class="meta">
+            <h3>Certificate Title 3</h3>
+            <p>Institution name · Date awarded</p>
+            <div class="actions">
+              <a class="btn" href="images/education_certificates/pythoncert1.pdf" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="btn secondary" href="images/education_certificates/pythoncert1.pdf" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="images/education_certificates/thumb-pythoncert2.pdf" alt="Thumbnail of Certificate 4">
+          <div class="meta">
+            <h3>Certificate Title 4</h3>
+            <p>Institution name · Date awarded</p>
+            <div class="actions">
+              <a class="btn" href="images/education_certificates/pythoncert2.pdf" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="btn secondary" href="images/education_certificates/pythoncert2.pdf" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="thumb" src="images/education_certificates/thumb-sqlcert.pdf" alt="Thumbnail of Certificate 5">
+          <div class="meta">
+            <h3>Certificate Title 5</h3>
+            <p>Institution name · Date awarded</p>
+            <div class="actions">
+              <a class="btn" href="images/education_certificates/sqlcert.pdf" target="_blank" rel="noopener noreferrer">View</a>
+              <a class="btn secondary" href="images/education_certificates/sqlcert.pdf" download>Download</a>
+            </div>
+          </div>
+        </article>
+
+      </section>
+    </main>
+
+      <p><a class="btn" href="index.html">Back to portfolio</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Levi Redinger — Full Stack Developer. <a href="https://github.com/levired6" target="_blank" rel="noopener">GitHub</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
