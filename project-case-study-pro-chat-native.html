@@ -1,47 +1,511 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Pro Chat Native — Project</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="logo" href="/">Levi Redinger</a>
-      </div>
-    </header>
-
-    <main class="container project">
-      <article>
-        <h1>Pro Chat Native</h1>
-        <p class="muted">A native chat experience built with Expo (React Native) using Firebase Auth and Firestore for real-time messaging. GiftedChat provides the message UI while Expo Router handles navigation across iOS, Android, and web.</p>
-
-        <h2>Tech</h2>
-        <ul>
-          <li>Expo / React Native</li>
-          <li>Expo Router</li>
-          <li>Firebase Auth & Firestore</li>
-          <li>react-native-gifted-chat</li>
-          <li>TypeScript / JavaScript</li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Chat Native Case Study</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 3px solid #007AFF;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            font-size: 1.3em;
+            color: #333;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+        
+        pre {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+        
+        pre code {
+            color: #f8f8f2;
+            padding: 0;
+            background-color: transparent;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table th {
+            background-color: #007AFF;
+            color: white;
+            font-weight: bold;
+        }
+        
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .feature-list li {
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #007AFF;
+            font-weight: bold;
+        }
+        
+        .requirement-section {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-left: 4px solid #007AFF;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            background-color: #fffacd;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .do-section {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-left: 4px solid #4caf50;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .dont-section {
+            background-color: #ffebee;
+            padding: 20px;
+            border-left: 4px solid #f44336;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #ddd;
+            margin: 40px 0;
+        }
+        
+        .back-to-top {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💬 Pro Chat Native</h1>
+        
+        <p>A <strong>professional real-time chat application</strong> built with <strong>React Native</strong>, <strong>Expo</strong>, and <strong>Firebase</strong>. Join conversations instantly with anonymous authentication and enjoy a beautiful, modern chat interface with customizable themes.</p>
+        
+        <hr>
+        
+        <h2>✨ Features</h2>
+        <ul class="feature-list">
+            <li><strong>⚡ Instant Access</strong> – Join the chat in seconds with anonymous authentication (no sign-up required)</li>
+            <li><strong>🔄 Real-time Messaging</strong> – Powered by Google Firestore for seamless instant updates</li>
+            <li><strong>🎨 Custom UI Themes</strong> – Choose from 4 beautiful background colors to personalize your experience</li>
+            <li><strong>✨ Modern Design</strong> – Glassmorphism UI with professional color palettes</li>
+            <li><strong>📱 Cross-Platform</strong> – Works on iOS, Android, and Web</li>
+            <li><strong>💾 Offline Support</strong> – Messages sync when you're back online</li>
         </ul>
+        
+        <hr>
+        
+        <h2>🚀 Getting Started (Step-by-Step)</h2>
+        
+        <h3>Prerequisites</h3>
+        <p>Before you begin, make sure you have installed:</p>
+        <ul>
+            <li><strong>Node.js</strong> (v16 or higher) – <a href="https://nodejs.org/" target="_blank">Download here</a></li>
+            <li><strong>npm</strong> (comes with Node.js)</li>
+            <li><strong>Git</strong> – <a href="https://git-scm.com/" target="_blank">Download here</a></li>
+        </ul>
+        
+        <div class="requirement-section">
+            <h3 style="margin-top: 0;">For iOS development:</h3>
+            <ul>
+                <li>Xcode installed on macOS</li>
+                <li>iOS simulator or a physical iPhone</li>
+            </ul>
+        </div>
+        
+        <div class="requirement-section">
+            <h3 style="margin-top: 0;">For Android development:</h3>
+            <ul>
+                <li>Android Studio installed</li>
+                <li>Android SDK configured</li>
+                <li>Android Emulator or a physical Android device</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>📋 Installation Guide</h2>
+        
+        <h3>Step 1: Clone the Repository</h3>
+        <p>Open your terminal and run:</p>
+        <pre><code>git clone https://github.com/levired6/pro-chat-native.git
+cd pro-chat-native</code></pre>
+        
+        <h3>Step 2: Install Dependencies</h3>
+        <p>Install all required packages:</p>
+        <pre><code>npm install</code></pre>
+        <p>This will install:</p>
+        <ul>
+            <li><code>expo</code> – The React Native framework</li>
+            <li><code>firebase</code> – Backend services for authentication and messaging</li>
+            <li><code>react-native-gifted-chat</code> – Beautiful chat UI components</li>
+            <li><code>react-navigation</code> – Navigation between screens</li>
+            <li>And other essential dependencies</li>
+        </ul>
+        
+        <h3>Step 3: Firebase Configuration (Already Set Up! ✅)</h3>
+        <div class="highlight">
+            <p><strong>Good news!</strong> The Firebase configuration is already included in the <code>firebaseConfig.js</code> file. The app uses a pre-configured Firebase project:</p>
+            <ul>
+                <li><strong>Project ID:</strong> <code>lets-chat-app-5eab0</code></li>
+                <li><strong>Firebase Console:</strong> <a href="https://console.firebase.google.com/project/lets-chat-app-5eab0" target="_blank">View here</a></li>
+            </ul>
+        </div>
+        
+        <p><strong>If you want to use your own Firebase project:</strong></p>
+        <ol>
+            <li>Go to <a href="https://console.firebase.google.com/" target="_blank">Firebase Console</a></li>
+            <li>Create a new project (or use an existing one)</li>
+            <li>Enable <strong>Authentication</strong> (Anonymous Sign-in method)</li>
+            <li>Enable <strong>Firestore Database</strong> (in test mode for development)</li>
+            <li>Copy your Firebase config from Project Settings</li>
+            <li>Update the <code>firebaseConfig.js</code> file with your credentials:</li>
+        </ol>
+        <pre><code>const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.firebasestorage.app",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+};</code></pre>
+        
+        <h3>Step 4: Start the Development Server</h3>
+        <p>Run the Expo development server:</p>
+        <pre><code>npm start</code></pre>
+        <p>This will display a QR code and menu options in your terminal.</p>
+        
+        <hr>
+        
+        <h2>📲 Running the App</h2>
+        <p>After running <code>npm start</code>, you have several options:</p>
+        
+        <h3>Option A: Run on Web (Easiest for Testing)</h3>
+        <p>Press <code>w</code> in the terminal to open the app in your default web browser.</p>
+        
+        <h3>Option B: Run on Android</h3>
+        <p><strong>Requirements:</strong> Android emulator running or Android device connected via USB</p>
+        <p>Press <code>a</code> in the terminal, or manually run:</p>
+        <pre><code>npm run android</code></pre>
+        
+        <h3>Option C: Run on iOS</h3>
+        <p><strong>Requirements:</strong> macOS with Xcode, or iOS simulator</p>
+        <p>Press <code>i</code> in the terminal, or manually run:</p>
+        <pre><code>npm run ios</code></pre>
+        
+        <h3>Option D: Use Expo Go App (Mobile Devices)</h3>
+        <ol>
+            <li>Download <strong>Expo Go</strong> from <a href="https://apps.apple.com/app/expo-go/id1054823468" target="_blank">App Store</a> or <a href="https://play.google.com/store/apps/details?id=host.exp.exponent" target="_blank">Google Play</a></li>
+            <li>Open Expo Go on your device</li>
+            <li>Scan the QR code displayed in your terminal</li>
+            <li>The app will load on your device instantly!</li>
+        </ol>
+        
+        <hr>
+        
+        <h2>🎯 How to Use the App</h2>
+        
+        <h3>Login Screen</h3>
+        <ol>
+            <li><strong>Enter Your Name</strong> – Type a username you'd like to use in the chat</li>
+            <li><strong>Choose a Background Color</strong> – Select from 4 professional color circles:
+                <ul>
+                    <li>⚫ <strong>Black</strong> – Classic and minimal</li>
+                    <li>🟣 <strong>Purple</strong> – Elegant and sophisticated</li>
+                    <li>⚪ <strong>Gray</strong> – Modern and neutral</li>
+                    <li>🟢 <strong>Green</strong> – Fresh and natural</li>
+                </ul>
+            </li>
+            <li><strong>Tap "Enter Chat"</strong> – You'll be instantly authenticated and connected</li>
+        </ol>
+        
+        <h3>Chat Screen</h3>
+        <ul>
+            <li><strong>Send Messages</strong> – Type your message and tap the send button</li>
+            <li><strong>Real-time Updates</strong> – See messages from other users instantly</li>
+            <li><strong>Log Out</strong> – Tap the "Log Out" button in the top-right corner to sign out</li>
+        </ul>
+        
+        <hr>
+        
+        <h2>📁 Project Structure</h2>
+        <pre><code>pro-chat-native/
+├── app/
+│   ├── index.tsx          # Login screen
+│   ├── chat.js            # Chat screen
+│   └── _layout.tsx        # Navigation setup
+├── firebaseConfig.js      # Firebase configuration
+├── package.json           # Project dependencies
+└── README.md              # This file</code></pre>
+        
+        <hr>
+        
+        <h2>🔧 Available Commands</h2>
+        <pre><code># Start the development server
+npm start
 
-        <h2>Notes</h2>
-        <p>This project demonstrates real-time messaging with Firestore snapshot listeners and a native-quality UI using GiftedChat. The repository contains inline Firebase configuration for quick testing; consider moving secrets to environment variables or a private config when publishing.</p>
+# Start on specific platform
+npm run android
+npm run ios
+npm run web
 
-        <p>
-          <a class="btn primary" href="https://github.com/levired6/pro-chat-native" target="_blank" rel="noopener noreferrer">View repository</a>
-          <a class="btn" href="index.html">Back to portfolio</a>
-        </p>
-      </article>
-    </main>
+# Run linting to check code quality
+npm run lint
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Levi Redinger — Full Stack Developer.</p>
-      </div>
-    </footer>
-    <script src="script.js" defer></script>
-  </body>
+# Reset the project (clears cache and node_modules)
+npm run reset-project</code></pre>
+        
+        <hr>
+        
+        <h2>🛠️ Troubleshooting</h2>
+        
+        <h3>"Command not found: npm"</h3>
+        <ul>
+            <li>Make sure Node.js is installed: <code>node --version</code></li>
+            <li>If not, download from <a href="https://nodejs.org/" target="_blank">nodejs.org</a></li>
+        </ul>
+        
+        <h3>"Metro bundler won't start"</h3>
+        <pre><code># Clear the cache and restart
+npm start -- --clear</code></pre>
+        
+        <h3>"Module not found" errors</h3>
+        <pre><code># Reinstall dependencies
+rm -rf node_modules package-lock.json
+npm install
+npm start</code></pre>
+        
+        <h3>"Firebase authentication failed"</h3>
+        <ul>
+            <li>Check that your Firebase project has <strong>Anonymous Authentication</strong> enabled</li>
+            <li>Verify your <code>firebaseConfig.js</code> has the correct credentials</li>
+            <li>Make sure Firestore Database exists and is in test mode (for development)</li>
+        </ul>
+        
+        <h3>App won't load on physical device</h3>
+        <ul>
+            <li>Ensure your device and computer are on the same WiFi network</li>
+            <li>The QR code must be scanned within 5 minutes of the server starting</li>
+            <li>Try restarting the Expo server: <code>npm start -- --clear</code></li>
+        </ul>
+        
+        <hr>
+        
+        <h2>📚 Tech Stack</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>React Native</strong></td>
+                    <td>Cross-platform mobile development</td>
+                </tr>
+                <tr>
+                    <td><strong>Expo</strong></td>
+                    <td>Development framework and CLI tools</td>
+                </tr>
+                <tr>
+                    <td><strong>Firebase</strong></td>
+                    <td>Real-time database and authentication</td>
+                </tr>
+                <tr>
+                    <td><strong>Firestore</strong></td>
+                    <td>Cloud database for messages</td>
+                </tr>
+                <tr>
+                    <td><strong>React Navigation</strong></td>
+                    <td>In-app navigation</td>
+                </tr>
+                <tr>
+                    <td><strong>Gifted Chat</strong></td>
+                    <td>Beautiful chat UI components</td>
+                </tr>
+                <tr>
+                    <td><strong>TypeScript/JavaScript</strong></td>
+                    <td>Programming languages</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <hr>
+        
+        <h2>🚀 Deployment</h2>
+        
+        <h3>Deploy to Expo Managed Hosting</h3>
+        <ol>
+            <li>Create an Expo account at <a href="https://expo.dev/" target="_blank">expo.dev</a></li>
+            <li>Install Expo CLI: <code>npm install -g eas-cli</code></li>
+            <li>Login: <code>eas login</code></li>
+            <li>Build and submit: <code>eas build</code></li>
+        </ol>
+        
+        <h3>Deploy to App Stores</h3>
+        <p>For production deployment to Apple App Store or Google Play Store, see the <a href="https://docs.expo.dev/eas/" target="_blank">Expo Deployment Guide</a></p>
+        
+        <hr>
+        
+        <h2>🤝 Contributing</h2>
+        <p>Have ideas to improve Pro Chat Native?</p>
+        <ol>
+            <li>Fork the repository</li>
+            <li>Create a feature branch: <code>git checkout -b feature/your-feature</code></li>
+            <li>Commit your changes: <code>git commit -m 'Add your feature'</code></li>
+            <li>Push to the branch: <code>git push origin feature/your-feature</code></li>
+            <li>Open a Pull Request</li>
+        </ol>
+        
+        <hr>
+        
+        <h2>📝 License</h2>
+        <p>This project is open source and available under the MIT License.</p>
+        
+        <hr>
+        
+        <h2>💡 Tips & Best Practices</h2>
+        
+        <div class="do-section">
+            <h3 style="margin-top: 0; color: #2e7d32;">✅ Do:</h3>
+            <ul>
+                <li>Keep your Firebase credentials secure (never commit them to version control)</li>
+                <li>Test on both iOS and Android before deployment</li>
+                <li>Enable Firestore security rules in production</li>
+                <li>Monitor your Firebase usage to stay within free tier limits</li>
+            </ul>
+        </div>
+        
+        <div class="dont-section">
+            <h3 style="margin-top: 0; color: #c62828;">❌ Don't:</h3>
+            <ul>
+                <li>Share your Firebase API keys publicly</li>
+                <li>Use this app's Firebase project for production without proper security rules</li>
+                <li>Run <code>npm install</code> inside the Expo Go app</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <h2>🆘 Need Help?</h2>
+        <ul>
+            <li><strong>Expo Docs:</strong> <a href="https://docs.expo.dev/" target="_blank">expo.dev/docs</a></li>
+            <li><strong>Firebase Docs:</strong> <a href="https://firebase.google.com/docs" target="_blank">firebase.google.com/docs</a></li>
+            <li><strong>React Native Docs:</strong> <a href="https://reactnative.dev/" target="_blank">reactnative.dev</a></li>
+            <li><strong>Create an Issue:</strong> <a href="https://github.com/levired6/pro-chat-native/issues" target="_blank">GitHub Issues</a></li>
+        </ul>
+        
+        <hr>
+        
+        <h2>🎉 You're All Set!</h2>
+        <p>You're now ready to build and run Pro Chat Native! Start with <strong>Step 1</strong> above and follow along. If you get stuck, check the <strong>Troubleshooting</strong> section or reach out for help.</p>
+        <p><strong>Happy chatting! 💬✨</strong></p>
+        
+    </div>
+</body>
 </html>
