@@ -257,23 +257,20 @@ a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(6,182
     margin-top: 0;
   }
 }
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
 .social-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem; /* Adjust space between icons */
+}
+
+.social-links a {
+  text-decoration: none; /* Removes any default underline on the link wrapper */
+  display: inline-block;
 }
 
 .social-icon {
-  width: 24px;
-  height: 24px;
+  width: 36px;  /* Increase size here (e.g., 36px or 40px) */
+  height: 36px;
   display: block;
   transition: opacity 0.2s ease;
 }
