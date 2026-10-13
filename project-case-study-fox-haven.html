@@ -3,201 +3,91 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Fox Haven Farm Stand — E-Commerce & POS</title>
+  <title>🦊 Fox Haven Farm Stand — E-Commerce & POS Web Application</title>
   <style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220aa;
-      --glass:#ffffff10;
-      --accent:#ffb86b;
-      --muted:#cbd5e1;
-      --surface:#0b1222;
-      --code:#011627;
-      --radius:14px;
-      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;}
     body{
-      margin:0;
-      background: radial-gradient(1000px 600px at 10% 10%, #123 0%, transparent 20%),
-                  radial-gradient(800px 400px at 90% 90%, #221 0%, transparent 20%),
-                  var(--bg);
-      color:var(--muted);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: #0f1724;
+      color: #e6eef6;
+      margin: 0;
+      padding: 32px;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 20px;
     }
-    .wrap{
-      width:100%;
-      max-width:980px;
-    }
-    .card{
+    .container{
+      max-width: 900px;
+      margin: 0 auto;
       background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border:1px solid rgba(255,255,255,0.04);
-      backdrop-filter: blur(10px) saturate(120%);
-      border-radius:var(--radius);
-      padding:28px;
+      border: 1px solid rgba(255,255,255,0.03);
+      padding: 28px;
+      border-radius: 12px;
       box-shadow: 0 10px 30px rgba(2,6,23,0.6);
     }
-    header{
-      display:flex;
-      gap:18px;
-      align-items:center;
-      margin-bottom:18px;
-    }
-    header h1{
-      margin:0;
-      font-size:20px;
-      color:#fff;
-      letter-spacing:0.2px;
-    }
-    header p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-    }
-    .meta{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-bottom:18px;
-    }
-    .pill{
-      background:rgba(255,255,255,0.03);
-      border:1px solid rgba(255,255,255,0.02);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
-      color:var(--muted);
-    }
-    section{margin:18px 0;}
-    h2{color:#fff;margin:8px 0;font-size:16px;}
-    ul{margin:8px 0 0 20px;color:var(--muted);}
-    li{margin:8px 0;line-height:1.45}
-    pre{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
-      border-radius:10px;
-      padding:14px;
-      overflow:auto;
-      color:var(--muted);
-      font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-      font-size:13px;
-      border:1px solid rgba(255,255,255,0.03);
-    }
-    a{color:var(--accent);text-decoration:none}
-    .badge{
-      display:inline-block;
-      background:linear-gradient(90deg,#ffb86b44,#ff7aa244);
-      color:#fff;
-      padding:6px 10px;
-      border-radius:8px;
-      font-weight:600;
-      font-size:13px;
-    }
-    footer{margin-top:20px;color:#93a3b8;font-size:13px;}
-    @media (max-width:640px){
-      body{padding:20px}
-      .card{padding:18px}
-    }
+    h1{font-size:20px;margin:0 0 8px 0;color:#fff}
+    p{margin:10px 0;color:#cbd5e1;line-height:1.5}
+    h2{font-size:16px;margin:18px 0 8px 0;color:#fff}
+    ul{margin:8px 0 0 20px;color:#cbd5e1;line-height:1.45}
+    pre{background:#091021;padding:12px;border-radius:8px;overflow:auto;color:#cbd5e1;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;}
+    a{color:#ffb86b}
+    .muted{color:#9fb0c8}
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <article class="card" role="article" aria-labelledby="project-title">
-      <header>
-        <div>
-          <h1 id="project-title">🦊 Fox Haven Farm Stand — E-Commerce & POS Web Application</h1>
-          <p>An interactive, responsive Point of Sale (POS) and online ordering platform built for local farm stands, artisanal bakeries, craft breweries, and wineries.</p>
-        </div>
-        <div style="margin-left:auto;text-align:right">
-          <div class="badge">React · TypeScript · Vite</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:6px">
-            <a href="https://github.com/levired6/fox-haven-farm-stand" target="_blank" rel="noopener noreferrer">View repository on GitHub</a>
-          </div>
-        </div>
-      </header>
+  <main class="container" role="main" aria-labelledby="title">
+    <h1 id="title">🦊 Fox Haven Farm Stand — E-Commerce & POS Web Application</h1>
 
-      <div class="meta">
-        <span class="pill">Glassmorphism UI</span>
-        <span class="pill">Real-time basket & receipt</span>
-        <span class="pill">Delivery radius verification</span>
-        <span class="pill">Age verification (alcohol)</span>
-      </div>
+    <p>An interactive, responsive Point of Sale (POS) and online ordering platform built for a local farm stand, artisanal bakery, craft brewery, and winery.</p>
 
-      <section>
-        <h2>🌟 Project Purpose & Passion</h2>
-        <p style="color:var(--muted);margin:0">I believe local businesses, agriculture, farm stands, and craft breweries deserve modern, intuitive digital tools that match the quality of their products. This project was engineered to explore how a clean UI and practical workflows can improve in-person and online sales for small producers.</p>
-      </section>
+    <p>Designed with a modern glassmorphism UI, real-time basket calculation, user account management, delivery radius verification, and automated age-verification workflows for alcohol compliance.</p>
 
-      <section>
-        <h2>🛠️ Key Features & Workflows</h2>
-        <ul>
-          <li><strong>Dynamic Inventory Filtering & Search</strong> — Category tabs, real-time search filtering, and seasonal zero-result fallbacks.</li>
-          <li><strong>Point of Sale (POS) Basket & Receipt Generator</strong> — Real-time subtotal, 7% sales tax calculation, quantity controls, and print-ready thermal receipt layouts.</li>
-          <li><strong>Customer Accounts & Profile Management</strong> — Persistent profiles and payment cards managed via browser <code>localStorage</code>.</li>
-          <li><strong>Alcohol Age-Verification (21+)</strong> — Automated age calculation from birthdate, mandatory physical ID warnings for deliveries, and verification modals for compliance.</li>
-          <li><strong>Fulfillment & Delivery Radius Check</strong> — Pickup/delivery options with 5-digit zip code distance validation and scheduled delivery windows.</li>
-          <li><strong>Customer Loyalty Program</strong> — Automatic 10 points per $1 spent on completed checkouts, visible on profiles and headers.</li>
-        </ul>
-      </section>
+    <h2>🌟 Project Purpose & Passion</h2>
+    <p class="muted">I believe local businesses, agriculture, farm stands, and craft breweries deserve modern, intuitive digital tools that match the quality of their products. This project was engineered to explore how important Point of Sale (POS) features—like instant item scanning/filtering, customer loyalty programs, split fulfillment (pickup/delivery), and compliance checks—can come together in a seamless, fast frontend user experience.</p>
 
-      <section>
-        <h2>🚀 Tech Stack</h2>
-        <ul>
-          <li><strong>Frontend:</strong> React 18, TypeScript, Vite</li>
-          <li><strong>Styling:</strong> Custom CSS inline styles & glassmorphic UI components</li>
-          <li><strong>State & Persistence:</strong> React Hooks + browser <code>localStorage</code></li>
-          <li><strong>Deployment:</strong> GitHub Pages (<code>gh-pages</code>)</li>
-        </ul>
-      </section>
+    <h2>🛠️ Key Features & Workflows</h2>
+    <ul>
+      <li><strong>Dynamic Inventory Filtering & Search:</strong> Category tabs, real-time search filtering, and custom seasonal zero-result fallbacks.</li>
+      <li><strong>Point of Sale (POS) Basket & Receipt Generator:</strong> Real-time subtotal, 7% sales tax calculation, quantity adjustment controls, and print-ready thermal receipt layouts.</li>
+      <li><strong>Customer Accounts & Profile Management:</strong> Persistent user profiles and payment cards managed via browser <code>localStorage</code>.</li>
+      <li><strong>Alcohol Age-Verification (21%) & Compliance:</strong> Automated age calculations based on birthdate for logged-in accounts, mandatory physical ID warnings for deliveries, and verification modals for guests.</li>
+      <li><strong>Fulfillment & Delivery Radius Check:</strong> Split pickup/delivery fulfillment with 5-digit zip code distance validation and delivery time window scheduling.</li>
+      <li><strong>Customer Loyalty Program:</strong> Automatic 10 points per $1 spent rewarded on completed checkouts, displayed on customer profiles and sticky headers.</li>
+    </ul>
 
-      <section>
-        <h2>💻 Local Development Setup</h2>
-        <ol style="color:var(--muted);margin-left:18px">
-          <li><strong>Clone the repository:</strong></li>
-        </ol>
-        <pre><code>git clone https://github.com/levired6/fox-haven-farm-stand.git
+    <h2>🚀 Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend:</strong> React 18, TypeScript, Vite</li>
+      <li><strong>Styling:</strong> Custom CSS Inline Styles & Glassmorphic UI Components (GlassButton)</li>
+      <li><strong>State & Persistence:</strong> React Hooks (<code>useState</code>, <code>useEffect</code>) + Browser <code>localStorage</code></li>
+      <li><strong>Deployment:</strong> GitHub Pages (<code>gh-pages</code>)</li>
+    </ul>
+
+    <h2>💻 Local Development Setup</h2>
+
+    <p><strong>Clone the repository:</strong></p>
+    <pre><code>git clone https://github.com/levired6/fox-haven-farm-stand.git
 cd fox-haven-farm-stand</code></pre>
 
-        <ol start="2" style="color:var(--muted);margin-left:18px">
-          <li><strong>Install dependencies:</strong></li>
-        </ol>
-        <pre><code>npm install</code></pre>
+    <p><strong>Install Dependencies:</strong></p>
+    <pre><code>npm install</code></pre>
 
-        <ol start="3" style="color:var(--muted);margin-left:18px">
-          <li><strong>Start local development server:</strong></li>
-        </ol>
-        <pre><code>npm run dev</code></pre>
+    <p><strong>Start Local Development Server:</strong></p>
+    <pre><code>npm run dev</code></pre>
 
-        <ol start="4" style="color:var(--muted);margin-left:18px">
-          <li><strong>Build for production:</strong></li>
-        </ol>
-        <pre><code>npm run build</code></pre>
-      </section>
+    <p><strong>Build for production:</strong></p>
+    <pre><code>npm run build</code></pre>
 
-      <section>
-        <h2>📝 Demo Login Instructions</h2>
-        <p style="color:var(--muted)">When testing the live site, you can either:</p>
-        <ul>
-          <li>Click <strong>Log In / Sign Up</strong> and choose Log In with any email to load a pre-configured demo account with sample cards and loyalty points.</li>
-          <li>Fill out the Sign Up form to test birthdate validation, address loading, and promotion preferences.</li>
-        </ul>
-      </section>
+    <h2>📝 Demo Login Instructions</h2>
+    <p class="muted">When testing the live site, you can either:</p>
+    <ul>
+      <li>Click Log In / Sign Up and click Log In with any email address to load a pre-configured demo account with sample cards and loyalty points.</li>
+      <li>Fill out the Sign Up form to test custom birthdate validation, address loading, and promotion preferences.</li>
+    </ul>
 
-      <section>
-        <h2>Ready for Launch</h2>
-        <p style="color:var(--muted)">When you're ready to deploy:</p>
-        <pre><code>npm run deploy</code></pre>
-      </section>
+    <h2>Ready for Launch</h2>
+    <p class="muted">Whenever you're ready, run your deployment commands:</p>
+    <pre><code>npm run deploy</code></pre>
 
-      <footer>
-        <div>Maintainer: <strong>levired6</strong></div>
-        <div style="margin-top:6px">Repository: <a href="https://github.com/levired6/fox-haven-farm-stand" target="_blank" rel="noopener noreferrer">fox-haven-farm-stand</a></div>
-      </footer>
-    </article>
-  </div>
+    <p class="muted" style="margin-top:14px">Repository: <a href="https://github.com/levired6/fox-haven-farm-stand" target="_blank" rel="noopener noreferrer">levired6/fox-haven-farm-stand</a></p>
+  </main>
 </body>
 </html>
