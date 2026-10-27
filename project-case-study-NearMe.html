@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NearMe — Case Study</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased leading-relaxed min-h-screen p-6 md:p-12">
+  <main class="max-w-4xl mx-auto space-y-12 bg-slate-900/80 border border-slate-800 rounded-2xl p-8 md:p-12 shadow-2xl backdrop-blur-sm">
+    
+    <!-- Header Section -->
+    <header class="space-y-6 border-b border-slate-800 pb-8">
+      <div class="flex items-center space-x-3">
+        <span class="text-4xl">🧭</span>
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">NearMe Case Study</h1>
+      </div>
+      <p class="text-lg md:text-xl text-slate-300 font-normal">
+        A production-grade, high-performance local discovery web application engineered to eliminate fragmented searching across multiple apps.
+      </p>
+      
+      <!-- Static Tech Badges -->
+      <div class="flex flex-wrap gap-2 pt-2">
+        <span class="bg-blue-600/20 text-blue-400 border border-blue-500/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">React 18</span>
+        <span class="bg-blue-700/20 text-blue-300 border border-blue-400/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">TypeScript 5.2</span>
+        <span class="bg-purple-600/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">Vite 5.1</span>
+        <span class="bg-teal-600/20 text-teal-300 border border-teal-500/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">Tailwind CSS 3.4</span>
+        <span class="bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">PWA Installable</span>
+      </div>
+    </header>
+
+    <!-- Motivation & Vision -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-100 flex items-center space-x-2">
+        <span>💡</span>
+        <span>Project Motivation & Vision</span>
+      </h2>
+      <p class="text-slate-300">
+        Modern local exploration is often fragmented across multiple platforms: Google Maps for addresses, Yelp for reviews, Ticketmaster for events, Transit apps for schedules, and DoorDash/Uber for handoffs.
+      </p>
+      <p class="text-slate-300">
+        <strong class="text-white">NearMe</strong> was engineered to solve this by consolidating diverse spatial endpoints into one seamless, high-density map interface. The goal was to build a mobile-first, zero-friction discovery tool that offers both casual users and "Pro" members maximum utility without context switching.
+      </p>
+    </section>
+
+    <!-- API Integrations -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-100 flex items-center space-x-2">
+        <span>🔌</span>
+        <span>API Integrations & Data Sources</span>
+      </h2>
+      <p class="text-slate-300">NearMe synthesizes real-time data from multiple industry-standard APIs to construct its unified map and drawer feeds:</p>
+      
+      <div class="overflow-x-auto border border-slate-800 rounded-lg">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="bg-slate-800/60 text-slate-200 font-semibold uppercase text-xs">
+            <tr>
+              <th scope="col" class="px-6 py-3 border-b border-slate-800">Service / API</th>
+              <th scope="col" class="px-6 py-3 border-b border-slate-800">Integration Purpose & Capabilities</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="px-6 py-4 font-medium text-white whitespace-nowrap">Google Places (New) API</td>
+              <td class="px-6 py-4">Powers spatial search across categories (dining, nightlife, local services, farm stands, stays, and parks). Provides editorial summaries, ratings, weekday opening hours, user reviews, and precise lat/lng coordinates.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium text-white whitespace-nowrap">Ticketmaster Discovery API</td>
+              <td class="px-6 py-4">Fetches live concerts, theatrical shows, and sports events. Enables in-app ticket availability previews, seating section tiers, and price estimations.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium text-white whitespace-nowrap">OpenStreetMap / Nominatim</td>
+              <td class="px-6 py-4">Provides global geocoding support to convert ZIP codes and city names into exact latitude and longitude coordinates.</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 font-medium text-white whitespace-nowrap">Browser Web Speech API</td>
+              <td class="px-6 py-4">Drives the interactive "Ask AI" voice assistant overlay for hands-free natural language filtering.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Technical Design -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-slate-100 flex items-center space-x-2">
+        <span>⚙️</span>
+        <span>Technical Design & Engineering Methods</span>
+      </h2>
+      <ul class="list-disc list-inside text-slate-300 space-y-2">
+        <li><strong class="text-white">Concurrent Multi-Batch Queries</strong>: Executes parallel API queries across expanded geographic radii to ensure high data density in both urban and rural environments.</li>
+        <li><strong class="text-white">Smart Local Filtering</strong>: Client-side state managed in React provides instant keyword filtering across places, venues, and categories without network delay.</li>
+        <li><strong class="text-white">Tiered Architecture & UX</strong>: Modular modal layout supporting OAuth authentication, custom saved collections (<em>"Weekend Ideas"</em>), and social tagging.</li>
+        <li><strong class="text-white">PWA Standalone Deployment</strong>: Configured with service workers to enable a standalone desktop and mobile app experience.</li>
+      </ul>
+    </section>
+
+    <!-- Live Demo Callout -->
+    <section class="bg-indigo-950/40 border border-indigo-500/30 rounded-xl p-6 space-y-3">
+      <h2 class="text-xl font-bold text-indigo-300 flex items-center space-x-2">
+        <span>🌐</span>
+        <span>Try the Live App</span>
+      </h2>
+      <p class="text-slate-300">You can interact with the fully deployed app live on Vercel without installing any dependencies:</p>
+      <div>
+        <a href="https://near-me-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors shadow-lg">
+          <span>Launch NearMe Live App</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Installation Steps -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-slate-100 flex items-center space-x-2">
+        <span>📱</span>
+        <span>How to Save / Install NearMe to Your Device</span>
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-5 space-y-3">
+          <h3 class="font-bold text-white flex items-center space-x-2">
+            <span>🍏</span>
+            <span>iPhone / iPad (iOS Safari)</span>
+          </h3>
+          <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1.5">
+            <li>Open Safari and navigate to the live URL.</li>
+            <li>Tap the <strong>Share</strong> button.</li>
+            <li>Scroll down and select <strong>Add to Home Screen</strong>.</li>
+            <li>Tap <strong>Add</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-5 space-y-3">
+          <h3 class="font-bold text-white flex items-center space-x-2">
+            <span>🤖</span>
+            <span>Android (Chrome)</span>
+          </h3>
+          <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1.5">
+            <li>Open Chrome and navigate to the live URL.</li>
+            <li>Tap the <strong>three vertical dots (⋮)</strong> menu.</li>
+            <li>Select <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+            <li>Tap <strong>Install</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="bg-slate-800/40 border border-slate-800 rounded-xl p-5 space-y-3">
+          <h3 class="font-bold text-white flex items-center space-x-2">
+            <span>💻</span>
+            <span>Desktop (Chrome / Edge)</span>
+          </h3>
+          <ol class="list-decimal list-inside text-sm text-slate-300 space-y-1.5">
+            <li>Open the app URL in Chrome or Edge.</li>
+            <li>Click the <strong>Install App icon</strong> in the address bar.</li>
+            <li>Confirm by clicking <strong>Install</strong>.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Author -->
+    <footer class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm text-slate-400 gap-4">
+      <div>
+        <span class="font-semibold text-slate-200">Author:</span> Levi Redinger
+      </div>
+      <div>
+        <a href="https://github.com/levired6" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 font-medium underline transition-colors">
+          GitHub Profile (@levired6)
+        </a>
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
