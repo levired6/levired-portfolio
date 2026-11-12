@@ -177,7 +177,6 @@ a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(6,182
   }
   100% {
     transform: translateX(-50%);
-    /* the logo sequence is doubled, once the end of the first half has reached the end (which looks exactly like the starting point), the animation restarts */
   }
 }
 .tools-slider {
@@ -239,7 +238,6 @@ a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(6,182
   margin: var(--spacing_s);
   padding: var(--spacing_s);
   max-width: 300px;
-
   border: 1px solid var(--primary-color);
   border-radius: 20px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.34);
@@ -260,16 +258,16 @@ a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(6,182
 .social-links {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Adjust space between icons */
+  gap: 1rem;
 }
 
 .social-links a {
-  text-decoration: none; /* Removes any default underline on the link wrapper */
+  text-decoration: none;
   display: inline-block;
 }
 
 .social-icon {
-  width: 36px;  /* Increase size here (e.g., 36px or 40px) */
+  width: 36px;
   height: 36px;
   display: block;
   transition: opacity 0.2s ease;
@@ -277,4 +275,113 @@ a:focus, button:focus, input:focus, textarea:focus{ outline:3px solid rgba(6,182
 
 .social-icon:hover {
   opacity: 0.8;
+}
+
+/* Miniature Fabergé Egg CTA Styles */
+.faberge-mini-cta {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 38px;
+  perspective: 300px;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.egg-mini-wrapper {
+  position: relative;
+  width: 24px;
+  height: 30px;
+  transition: transform 0.25s ease;
+}
+
+.faberge-mini-cta:hover .egg-mini-wrapper {
+  transform: translateY(-2px) scale(1.08);
+}
+
+.egg-mini-top,
+.egg-mini-bottom {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.45);
+}
+
+/* Top Shell */
+.egg-mini-top {
+  top: 0;
+  height: 16px;
+  border-radius: 50% 50% 0 0 / 85% 85% 0 0;
+  background: radial-gradient(circle at 30% 30%, #c92a3e, #6e0d1a);
+  border-bottom: 1.5px solid #f5d061;
+  transform-origin: bottom center;
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 3;
+}
+
+/* Bottom Shell */
+.egg-mini-bottom {
+  bottom: 0;
+  height: 14px;
+  border-radius: 0 0 50% 50% / 0 0 75% 75%;
+  background: radial-gradient(circle at 30% 20%, #a81c2e, #540812);
+  border-top: 1.5px solid #d4af37;
+  z-index: 2;
+}
+
+/* Gold Center Clasp */
+.egg-mini-clasp {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 215, 0, 0.9);
+  z-index: 4;
+  transition: opacity 0.2s ease;
+}
+
+/* Camera Surprise Inside */
+.egg-mini-surprise {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.4);
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0;
+  z-index: 1;
+  filter: drop-shadow(0 0 5px rgba(255, 223, 89, 0.95));
+  transition: all 0.45s ease 0.1s;
+}
+
+/* Gold Pedestal Base */
+.egg-mini-stand {
+  width: 14px;
+  height: 3px;
+  background: linear-gradient(90deg, #b8860b, #ffd700, #b8860b);
+  border-radius: 2px;
+  margin-top: -1px;
+}
+
+/* Open State Triggered by JS on Click */
+.faberge-mini-cta.is-open .egg-mini-top {
+  transform: rotateX(130deg) translateY(-2px);
+}
+
+.faberge-mini-cta.is-open .egg-mini-clasp {
+  opacity: 0;
+}
+
+.faberge-mini-cta.is-open .egg-mini-surprise {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px) scale(1.15);
 }

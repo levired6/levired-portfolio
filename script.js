@@ -1,4 +1,4 @@
-// Small interaction script: nav toggle, year, and scroll reveal
+// Small interaction script: nav toggle, year, scroll reveal, and Fabergé Egg animation
 
 document.addEventListener('DOMContentLoaded', function () {
   // year in footer
@@ -41,4 +41,19 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.animate([{ transform: 'translateY(-2px)' }, { transform: 'translateY(0)' }], { duration: 300, easing: 'cubic-bezier(.2,.9,.3,1)' });
     });
   });
+
+  // Fabergé Egg Archive CTA animation + delayed redirect
+  const fabergeBtn = document.getElementById('fabergeEggBtn');
+  if (fabergeBtn) {
+    fabergeBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const destination = fabergeBtn.getAttribute('href');
+
+      fabergeBtn.classList.add('is-open');
+
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 750);
+    });
+  }
 });
