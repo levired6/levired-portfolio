@@ -1,4 +1,4 @@
-// Small interaction script: nav toggle, year, scroll reveal, and Fabergé Egg animation
+// Small interaction script: nav toggle, year, scroll reveal, Fabergé Egg animation, and Scenic Archive modal
 
 document.addEventListener('DOMContentLoaded', function () {
   // year in footer
@@ -58,6 +58,56 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         window.location.href = destination;
       }, 650);
+    });
+  }
+
+  // Scenic Archive Project Modal (past-projects.html)
+  const scenicModal = document.getElementById('scenicModal');
+  if (scenicModal) {
+    const modalTitle = document.getElementById('scenicModalTitle');
+    const modalDesc = document.getElementById('scenicModalDesc');
+    const modalPhotos = document.getElementById('scenicModalPhotos');
+    const closeBtn = document.getElementById('scenicCloseBtn');
+
+    document.querySelectorAll('.scenic-card').forEach((card) => {
+      const btn = card.querySelector('.scenic-open-btn');
+      const openHandler = () => {
+        modalTitle.textContent = card.dataset.title || 'Scenic Project';
+        modalDesc.textContent = card.dataset.description || '';
+        modalPhotos.innerHTML = '';
+
+        let photos = [];
+        try {
+          photos = JSON.parse(card.dataset.photos || '[]');
+        } catch (err) {
+          photos = [];
+        }
+
+        photos.forEach((src) => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = modalTitle.textContent;
+          modalPhotos.appendChild(img);
+        });
+
+        scenicModal.classList.add('is-open');
+      };
+
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button')) return;
+        openHandler();
+      });
+      if (btn) btn.addEventListener('click', openHandler);
+    });
+
+    const closeModal = () => scenicModal.classList.remove('is-open');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    scenicModal.addEventListener('click', (e) => {
+      if (e.target === scenicModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
     });
   }
 });

@@ -1,8 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Past Projects</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Past Scenic Projects — Levi Redinger</title>
+    <meta name="description"
+      content="Easter egg gallery of past scenic art projects by Levi Redinger." />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
+  <body class="scenic-archive">
+    <header class="archive-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Levi Redinger</a>
+        <a class="archive-back-link" href="index.html">← Back to Portfolio</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="archive-hero">
+        <span class="archive-eyebrow">Easter Egg Archive</span>
+        <h1>You have found the easter egg page! Get to know me a little better by seeing past scenic art projects.</h1>
+        <p>Before writing full-stack code, I spent time bringing environments to life as a scenic artist—focusing on texture, depth, lighting, and visual storytelling.</p>
+      </section>
+
+      <section class="scenic-grid" aria-label="Past scenic art projects">
+        <!-- Replace src paths and captions once you compile your scenic photos -->
+        <article
+          class="scenic-card"
+          data-title="Scenic Project One"
+          data-description="Add project notes, paint techniques, or build details here."
+          data-photos='["images/St-louis.png"]'>
+          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project One preview">
+          <div class="scenic-card-body">
+            <h2>Scenic Project One</h2>
+            <p>Placeholder card—swap in your first scenic piece, medium, and story.</p>
+          </div>
+          <div class="scenic-card-footer">
+            <button type="button" class="scenic-open-btn">View more photos</button>
+          </div>
+        </article>
+
+        <article
+          class="scenic-card"
+          data-title="Scenic Project Two"
+          data-description="Add project notes, paint techniques, or build details here."
+          data-photos='["images/St-louis.png"]'>
+          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Two preview">
+          <div class="scenic-card-body">
+            <h2>Scenic Project Two</h2>
+            <p>Placeholder card—great for multi-angle shots or detail close-ups.</p>
+          </div>
+          <div class="scenic-card-footer">
+            <button type="button" class="scenic-open-btn">View more photos</button>
+          </div>
+        </article>
+
+        <article
+          class="scenic-card"
+          data-title="Scenic Project Three"
+          data-description="Add project notes, paint techniques, or build details here."
+          data-photos='["images/St-louis.png"]'>
+          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Three preview">
+          <div class="scenic-card-body">
+            <h2>Scenic Project Three</h2>
+            <p>Placeholder card—click to open a gallery view with extra images.</p>
+          </div>
+          <div class="scenic-card-footer">
+            <button type="button" class="scenic-open-btn">View more photos</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <div class="scenic-modal" id="scenicModal" role="dialog" aria-modal="true" aria-labelledby="scenicModalTitle">
+      <div class="scenic-modal-panel">
+        <div class="scenic-modal-top">
+          <h3 id="scenicModalTitle">Project Title</h3>
+          <button type="button" class="scenic-close-btn" id="scenicCloseBtn">Close</button>
+        </div>
+        <p id="scenicModalDesc" class="scenic-modal-desc"></p>
+        <div class="scenic-modal-photos" id="scenicModalPhotos"></div>
+      </div>
+    </div>
+
+    <footer class="site-footer scenic-footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> Levi Redinger — Full Stack Developer.</p>
+        <div class="social-links">
+          <a href="https://github.com/levired6" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <img src="images/icons8-github-48.png" alt="GitHub" class="social-icon">
+          </a>
+          <a href="https://www.linkedin.com/in/levi-redinger" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <img src="images/icons8-linkedin-48.png" alt="LinkedIn" class="social-icon">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>
