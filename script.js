@@ -45,15 +45,19 @@ document.addEventListener('DOMContentLoaded', function () {
   // Fabergé Egg Archive CTA animation + delayed redirect
   const fabergeBtn = document.getElementById('fabergeEggBtn');
   if (fabergeBtn) {
+    let isNavigating = false;
+
     fabergeBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      const destination = fabergeBtn.getAttribute('href');
+      if (isNavigating) return;
+      isNavigating = true;
 
+      const destination = fabergeBtn.getAttribute('href');
       fabergeBtn.classList.add('is-open');
 
       setTimeout(() => {
         window.location.href = destination;
-      }, 750);
+      }, 650);
     });
   }
 });
