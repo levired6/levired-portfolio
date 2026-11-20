@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = document.getElementById('scenicCloseBtn');
 
     document.querySelectorAll('.scenic-card').forEach((card) => {
-      const btn = card.querySelector('.scenic-open-btn');
+      const openBtn = card.querySelector('.scenic-open-btn');
+      const thumbBtn = card.querySelector('.scenic-thumb-btn');
+
       const openHandler = () => {
         modalTitle.textContent = card.dataset.title || 'Scenic Project';
         modalDesc.textContent = card.dataset.description || '';
@@ -93,11 +95,8 @@ document.addEventListener('DOMContentLoaded', function () {
         scenicModal.classList.add('is-open');
       };
 
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('button')) return;
-        openHandler();
-      });
-      if (btn) btn.addEventListener('click', openHandler);
+      if (thumbBtn) thumbBtn.addEventListener('click', openHandler);
+      if (openBtn) openBtn.addEventListener('click', openHandler);
     });
 
     const closeModal = () => scenicModal.classList.remove('is-open');

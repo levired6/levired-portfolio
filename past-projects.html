@@ -13,7 +13,10 @@
     <header class="archive-header">
       <div class="container header-inner">
         <a class="logo" href="index.html">Levi Redinger</a>
-        <a class="archive-back-link" href="index.html">← Back to Portfolio</a>
+        <nav class="archive-nav" aria-label="Archive navigation">
+          <a class="glass-cta glass-cta-sm" href="past-projects.html">Past Projects</a>
+          <a class="glass-cta glass-cta-sm" href="index.html">← Back to Portfolio</a>
+        </nav>
       </div>
     </header>
 
@@ -25,49 +28,57 @@
       </section>
 
       <section class="scenic-grid" aria-label="Past scenic art projects">
-        <!-- Replace src paths and captions once you compile your scenic photos -->
+        <!-- Card 1 -->
         <article
           class="scenic-card"
           data-title="Scenic Project One"
           data-description="Add project notes, paint techniques, or build details here."
-          data-photos='["images/St-louis.png"]'>
-          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project One preview">
+          data-photos='["images/St-louis.png", "images/foxhavenscreenshot.png"]'>
+          <button type="button" class="scenic-thumb-btn" aria-label="View more photos for Scenic Project One">
+            <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project One preview">
+          </button>
           <div class="scenic-card-body">
             <h2>Scenic Project One</h2>
             <p>Placeholder card—swap in your first scenic piece, medium, and story.</p>
           </div>
           <div class="scenic-card-footer">
-            <button type="button" class="scenic-open-btn">View more photos</button>
+            <button type="button" class="glass-cta scenic-open-btn">View more photos</button>
           </div>
         </article>
 
+        <!-- Card 2 -->
         <article
           class="scenic-card"
           data-title="Scenic Project Two"
           data-description="Add project notes, paint techniques, or build details here."
           data-photos='["images/St-louis.png"]'>
-          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Two preview">
+          <button type="button" class="scenic-thumb-btn" aria-label="View more photos for Scenic Project Two">
+            <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Two preview">
+          </button>
           <div class="scenic-card-body">
             <h2>Scenic Project Two</h2>
             <p>Placeholder card—great for multi-angle shots or detail close-ups.</p>
           </div>
           <div class="scenic-card-footer">
-            <button type="button" class="scenic-open-btn">View more photos</button>
+            <button type="button" class="glass-cta scenic-open-btn">View more photos</button>
           </div>
         </article>
 
+        <!-- Card 3 -->
         <article
           class="scenic-card"
           data-title="Scenic Project Three"
           data-description="Add project notes, paint techniques, or build details here."
           data-photos='["images/St-louis.png"]'>
-          <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Three preview">
+          <button type="button" class="scenic-thumb-btn" aria-label="View more photos for Scenic Project Three">
+            <img class="scenic-thumb" src="images/St-louis.png" alt="Scenic Project Three preview">
+          </button>
           <div class="scenic-card-body">
             <h2>Scenic Project Three</h2>
-            <p>Placeholder card—click to open a gallery view with extra images.</p>
+            <p>Placeholder card—click the photo or button to open extra images.</p>
           </div>
           <div class="scenic-card-footer">
-            <button type="button" class="scenic-open-btn">View more photos</button>
+            <button type="button" class="glass-cta scenic-open-btn">View more photos</button>
           </div>
         </article>
       </section>
@@ -77,10 +88,14 @@
       <div class="scenic-modal-panel">
         <div class="scenic-modal-top">
           <h3 id="scenicModalTitle">Project Title</h3>
-          <button type="button" class="scenic-close-btn" id="scenicCloseBtn">Close</button>
+          <button type="button" class="glass-cta glass-cta-sm scenic-close-btn" id="scenicCloseBtn">Close</button>
         </div>
         <p id="scenicModalDesc" class="scenic-modal-desc"></p>
         <div class="scenic-modal-photos" id="scenicModalPhotos"></div>
+        <div class="scenic-modal-actions">
+          <a class="glass-cta glass-cta-sm" href="past-projects.html">All Past Projects</a>
+          <a class="glass-cta glass-cta-sm" href="index.html">← Back to Portfolio</a>
+        </div>
       </div>
     </div>
 
@@ -88,6 +103,7 @@
       <div class="container footer-content">
         <p>© <span id="year"></span> Levi Redinger — Full Stack Developer.</p>
         <div class="social-links">
+          <a href="index.html" class="glass-cta glass-cta-sm">Portfolio Home</a>
           <a href="https://github.com/levired6" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
             <img src="images/icons8-github-48.png" alt="GitHub" class="social-icon">
           </a>
